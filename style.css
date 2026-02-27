@@ -1,0 +1,185 @@
+/* ===== General ===== */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #3e2723; /* dark chocolate */
+    color: #fff8f0; /* cream */
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5 {
+    color: #ffd180; /* gold accent */
+}
+
+a {
+    color: #ffd180;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ffb74d;
+    text-decoration: underline;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+    background-color: #5d4037 !important; /* dark brown */
+}
+
+.navbar .nav-link {
+    color: #fff8f0 !important;
+    font-weight: 500;
+}
+
+.navbar .nav-link:hover {
+    color: #ffd180 !important;
+}
+
+.btn-primary {
+    background-color: #6d4c41;
+    border-color: #5d4037;
+    color: #fff8f0;
+}
+
+.btn-primary:hover {
+    background-color: #5d4037;
+    border-color: #4e342e;
+}
+
+.btn-success {
+    background-color: #8d6e63;
+    border-color: #6d4c41;
+    color: #fff8f0;
+}
+
+.btn-success:hover {
+    background-color: #6d4c41;
+    border-color: #5d4037;
+}
+
+.btn-danger {
+    background-color: #d32f2f;
+    border-color: #b71c1c;
+    color: #fff8f0;
+}
+
+/* ===== Cafe Title ===== */
+.cafe-title {
+    font-family: 'Brush Script MT', cursive;
+    font-size: 3rem;
+    text-shadow: 2px 2px 5px #000;
+}
+
+/* ===== Intro Paragraph ===== */
+p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+/* ===== Images ===== */
+img {
+    max-width: 65%;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.6);
+}
+
+/* ===== Menu Boxes ===== */
+.menu-box {
+    background-color: #4e342e;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0;
+    font-size: 1rem;
+}
+
+.section-title {
+    color: #ffd180;
+    border-bottom: 1px solid #ffd180;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.card-custom {
+    background-color: #5d4037;
+    color: #fff8f0;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.offer-box {
+    border: 2px solid #8B4513; 
+    border-radius: 12px;        
+    padding: 20px;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+.offer-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 4px 4px 12px rgba(0,0,0,0.2);
+}
+
+
+#orderSummary, #paymentSummary, #finalSummary {
+    background-color: #4e342e;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.list-group-item {
+    background-color: #6d4c41;
+    border: none;
+    color: #fff8f0;
+    margin-bottom: 5px;
+}
+
+input, select {
+    background-color: #5d4037;
+    border: 1px solid #3e2723;
+    color: #fff8f0;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+input::placeholder {
+    color: #ffe0b2;
+}
+
+button {
+    font-weight: 600;
+}
+
+
+.form-container {
+    background-color: #4e342e;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+#tableSelectDiv {
+    background-color: #4e342e;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px){
+    .menu-item {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .card-custom {
+        margin-bottom: 15px;
+    }
+}

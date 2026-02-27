@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Payment - SUNRISE CAFÉ</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4">
+    <a class="navbar-brand" href="index.html">SUNRISE CAFÉ</a>
+    <div class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container my-4">
+    <h2 class="text-center mb-4">Final Payment</h2>
+    <div class="row">
+        <div class="col-md-6">
+            <ul class="list-group" id="finalOrderList"></ul>
+            <p class="mt-2">Total: RM <span id="finalTotal">0.00</span></p>
+        </div>
+
+        <div class="col-md-6">
+            <h4>Choose Payment Method</h4>
+            <div class="form-check">
+                <input class="form-check-input payment-radio" type="radio" name="paymentMethod" id="cash" value="Cash">
+                <label class="form-check-label" for="cash">Cash</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input payment-radio" type="radio" name="paymentMethod" id="debit" value="Debit Card">
+                <label class="form-check-label" for="debit">Debit Card</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input payment-radio" type="radio" name="paymentMethod" id="online" value="Online Banking">
+                <label class="form-check-label" for="online">Online Banking</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input payment-radio" type="radio" name="paymentMethod" id="tng" value="Touch 'n Go">
+                <label class="form-check-label" for="tng">Touch 'n Go</label>
+            </div>
+
+            <button id="payBtn" class="btn btn-success mt-3">Pay Now</button>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+<script>
+    // Show final order + total
+    const finalOrderList = document.getElementById('finalOrderList');
+    const finalTotal = document.getElementById('finalTotal');
+    const payBtn = document.getElementById('payBtn');
+
+    let currentOrder = JSON.parse(localStorage.getItem('currentOrder')) || [];
+    let total = 0;
+    finalOrderList.innerHTML = '';
+    currentOrder.forEach(item=>{
+        total += item.price;
+        let li = document.createElement('li');
+        li.classList.add('list-group-item');
+        li.innerText = `${item.name} - RM ${item.price.toFixed(2)}`;
+        finalOrderList.appendChild(li);
+    });
+    finalTotal.innerText = total.toFixed(2);
+
+    payBtn.addEventListener('click', ()=>{
+        const selected = document.querySelector('input[name="paymentMethod"]:checked');
+        if(!selected){
+            alert("Please select a payment method!");
+            return;
+        }
+        alert(`Payment Successful!\nMethod: ${selected.value}\nTotal Paid: RM ${total.toFixed(2)}`);
+        localStorage.removeItem('currentOrder');
+        window.location.href = 'index.html';
+    });
+</script>
+</body>
+</html>
