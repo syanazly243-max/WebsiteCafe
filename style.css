@@ -91,20 +91,54 @@ img {
     margin-bottom: 30px;
 }
 
-.menu-item {
-    display: flex;
-    justify-content: space-between;
-    margin: 5px 0;
+/* ===== Menu Table Styling (TAMBAHAN) ===== */
+.menu-box table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #4e342e; /* gelap coklat */
+    color: #fff8f0;
+    margin-bottom: 20px;
     font-size: 1rem;
 }
 
-.section-title {
-    color: #ffd180;
-    border-bottom: 1px solid #ffd180;
-    padding-bottom: 5px;
-    margin-bottom: 10px;
+.menu-box th, .menu-box td {
+    border: 1px solid #6d4c41; /* garisan coklat gelap */
+    padding: 10px 12px;
+    text-align: left;
+    vertical-align: middle;
 }
 
+.menu-box th {
+    background-color: #5d4037; /* lebih gelap untuk header */
+    color: #ffd180; /* gold text header */
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.menu-box tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+.menu-box tbody tr:hover {
+    background-color: #6d4c41; /* row hover effect */
+    cursor: pointer;
+}
+
+.menu-box td:nth-child(2) {
+    font-weight: 500; /* Item name lebih menonjol */
+}
+
+.menu-box td:nth-child(3) {
+    text-align: right; /* Price align kanan */
+    font-weight: 600;
+}
+
+/* Alternating row colors untuk kemas */
+.menu-box tbody tr:nth-child(even) {
+    background-color: #5a2f1f;
+}
+
+/* ===== Card Custom ===== */
 .card-custom {
     background-color: #5d4037;
     color: #fff8f0;
@@ -125,7 +159,6 @@ img {
     transform: translateY(-5px);
     box-shadow: 4px 4px 12px rgba(0,0,0,0.2);
 }
-
 
 #orderSummary, #paymentSummary, #finalSummary {
     background-color: #4e342e;
@@ -156,7 +189,6 @@ button {
     font-weight: 600;
 }
 
-
 .form-container {
     background-color: #4e342e;
     padding: 20px;
@@ -181,5 +213,14 @@ button {
 
     .card-custom {
         margin-bottom: 15px;
+    }
+
+    /* Responsive table font & padding */
+    .menu-box table {
+        font-size: 0.9rem;
+    }
+
+    .menu-box th, .menu-box td {
+        padding: 8px;
     }
 }
